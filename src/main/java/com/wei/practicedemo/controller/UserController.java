@@ -51,8 +51,8 @@ public class UserController {
     }
 
     @GetMapping("/testPageHelper2")
-    public List<UserVO> testPageHelper2(@ModelAttribute("userVO")UserVO userVO){
-        List<UserVO> queryResult = userService.findAllUserByPageF(1, 5, userVO);
+    public PageInfo<UserVO> testPageHelper2(@ModelAttribute("userVO")UserVO userVO){
+        PageInfo<UserVO> queryResult = userService.findAllUserByPageF(1, 5, userVO);
         return queryResult;
     }
 

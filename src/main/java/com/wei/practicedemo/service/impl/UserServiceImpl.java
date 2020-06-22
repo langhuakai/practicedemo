@@ -1,5 +1,6 @@
 package com.wei.practicedemo.service.impl;
 
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.wei.practicedemo.dao.UserMapper;
@@ -65,22 +66,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserVO> findAllUserByPageF(int pageNum, int pageSize, UserVO userVO) {
+    public PageInfo<UserVO> findAllUserByPageF(int pageNum, int pageSize, UserVO userVO) {
         // TODO Auto-generated method stub
-        PageHelper.startPage(pageNum, pageSize);
-        List<UserEntity> lists = userMapper.queryUsers(translateVO2Entity(userVO));
-        List<UserVO> userVOList = new ArrayList<>();
-        for (UserEntity userEntity : lists) {
-            UserVO returnUserVO = translateEntity2VO(userEntity);
-            userVOList.add(returnUserVO);
-        }
-        return userVOList;
-    }
-
-    @Override
-    public PageInfo<UserVO> findAllUserByPageS(int pageNum, int pageSize, UserVO userVO) {
-        // TODO Auto-generated method stub
-        PageHelper.startPage(pageNum, pageSize);
+        Page page = PageHelper.startPage(pageNum, pageSize);
         List<UserEntity> lists = userMapper.queryUsers(translateVO2Entity(userVO));
         List<UserVO> userVOList = new ArrayList<>();
         for (UserEntity userEntity : lists) {
@@ -88,7 +76,20 @@ public class UserServiceImpl implements UserService {
             userVOList.add(returnUserVO);
         }
         PageInfo<UserVO> pageInfo = new PageInfo<UserVO>(userVOList);
-        //pageInfo.setTotal();
+        pageInfo.setTotal(page.getTotal());
+        return pageInfo;
+    }
+
+    @Override
+    public PageInfo<UserVO> findAllUserByPageS(int pageNum, int pageSize, UserVO userVO) {
+        // TODO Auto-generated method stub
+        List<UserEntity> lists = userMapper.queryUsers(translateVO2Entity(userVO));
+        List<UserVO> userVOList = new ArrayList<>();
+        for (UserEntity userEntity : lists) {
+            UserVO returnUserVO = translateEntity2VO(userEntity);
+            userVOList.add(returnUserVO);
+        }
+        PageInfo<UserVO> pageInfo = new PageInfo<UserVO>(userVOList);
         return pageInfo;
 
     }
