@@ -14,6 +14,9 @@ public class UserEntity {
     private String entryDate;
     private String companyAdress;
 
+    public UserEntity() {
+    }
+
     public UserEntity(int id, String userName, String sex, int age, String email, String phone, String personalPlan, String entryDate, String companyAdress) {
         this.userName = userName;
         this.sex = sex;

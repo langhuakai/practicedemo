@@ -1,5 +1,7 @@
 package com.wei.practicedemo.vo;
 
+import com.wei.practicedemo.middleentity.Adress;
+
 import java.util.List;
 
 public class UserVO {
@@ -10,21 +12,21 @@ public class UserVO {
     private int age;
     private String email;
     private String phone;
-    private String personalPlan;
     private String entryDate;
-    private String companyAdress;
+    private List<String> personalPlans;
+    private Adress companyAdress;
 
     public UserVO() {
     }
 
-    public UserVO(int id, String userName, String sex, int age, String email, String phone, String personalPlan, String entryDate, String companyAdress) {
+    public UserVO(int id, String userName, String sex, int age, String email, String phone, List<String> personalPlans, String entryDate, Adress companyAdress) {
         this.id = id;
         this.userName = userName;
         this.sex = sex;
         this.age = age;
         this.email = email;
         this.phone = phone;
-        this.personalPlan = personalPlan;
+        this.personalPlans = personalPlans;
         this.entryDate = entryDate;
         this.companyAdress = companyAdress;
     }
@@ -57,11 +59,11 @@ public class UserVO {
         this.entryDate = entryDate;
     }
 
-    public String getCompanyAdress() {
+    public Adress getCompanyAdress() {
         return companyAdress;
     }
 
-    public void setCompanyAdress(String companyAdress) {
+    public void setCompanyAdress(Adress companyAdress) {
         this.companyAdress = companyAdress;
     }
 
@@ -93,11 +95,11 @@ public class UserVO {
         this.phone = phone;
     }
 
-    public String getPersonalPlan() {
-        return personalPlan;
+    public List<String> getPersonalPlans() {
+        return personalPlans;
     }
 
-    public void setPersonalPlan(String personalPlan) {
-        this.personalPlan = personalPlan;
+    public void setPersonalPlans(List<String> personalPlans) {
+        this.personalPlans = personalPlans;
     }
 }

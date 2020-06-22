@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 public class UserController {
 
     @Autowired
@@ -44,14 +45,14 @@ public class UserController {
     }
 
     @GetMapping("/testPageHelper1")
-    public PageInfo<UserVO> testPageHelper1(@ModelAttribute("userVO")UserVO userVO){
-        PageInfo<UserVO> queryResult = userService.findAllUserByPageS(userVO, 1, 5);
+    public PageInfo<UserVO> testPageHelper1(int pageNum, int pageSize, @ModelAttribute("userVO")UserVO userVO){
+        PageInfo<UserVO> queryResult = userService.findAllUserByPageS(pageNum, pageSize, userVO);
         return queryResult;
     }
 
     @GetMapping("/testPageHelper2")
     public List<UserVO> testPageHelper2(@ModelAttribute("userVO")UserVO userVO){
-        List<UserVO> queryResult = userService.findAllUserByPageF(userVO,1, 5);
+        List<UserVO> queryResult = userService.findAllUserByPageF(1, 5, userVO);
         return queryResult;
     }
 

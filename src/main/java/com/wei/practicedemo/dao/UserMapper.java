@@ -1,5 +1,6 @@
 package com.wei.practicedemo.dao;
 
+import com.wei.practicedemo.entity.UserEntity;
 import com.wei.practicedemo.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,13 +9,13 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    List<UserVO> queryUsers(UserVO userVO);
+    List<UserEntity> queryUsers(UserEntity userEntity);
 
-    void updateUser(UserVO userVO);
+    void updateUser(UserEntity userEntity);
 
-    void insertUser(UserVO userVO);
+    void insertUser(UserEntity userEntity);
 
     void deleteUser(int id);
 
-    List<UserVO> queryUserInfo();
+    List<UserEntity> queryUserInfo();
 }

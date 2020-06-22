@@ -3,7 +3,7 @@
 <mapper namespace="com.wei.practicedemo.dao.UserMapper">
 
     <!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.wei.practicedemo.vo.UserVO" id="UserMap">
+    <resultMap type="com.wei.practicedemo.entity.UserEntity" id="UserMap">
 
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="user_name" property="userName" jdbcType="VARCHAR" />
@@ -19,7 +19,7 @@
 
 
 
-    <select id="queryUsers" parameterType="com.wei.practicedemo.vo.UserVO" resultMap="UserMap">
+    <select id="queryUsers" parameterType="com.wei.practicedemo.entity.UserEntity" resultMap="UserMap">
         select id,user_name,sex,age,email,phone,personal_plan,entry_date,company_adress
         from users
         <where>
@@ -39,12 +39,12 @@
         </where>
     </select>
 
-    <insert id="insertUser" parameterType="com.wei.practicedemo.vo.UserVO">
+    <insert id="insertUser" parameterType="com.wei.practicedemo.entity.UserEntity">
         insert into users(user_name,sex,age,email,phone,personal_plan,entry_date,company_adress)
         values (#{userName},#{sex},#{age},#{email},#{phone},#{personalPlan},#{entryDate},#{companyAdress})
     </insert>
 
-    <update id="updateUser" parameterType="com.wei.practicedemo.vo.UserVO">
+    <update id="updateUser" parameterType="com.wei.practicedemo.entity.UserEntity">
         update users
         <set>
             <if test="userName != null">user_name=#{userName},</if>
