@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.wei.practicedemo.dao.UserMapper;
 import com.wei.practicedemo.entity.UserEntity;
-import com.wei.practicedemo.middleentity.Adress;
+import com.wei.practicedemo.middleentity.Address;
 import com.wei.practicedemo.service.UserService;
 import com.wei.practicedemo.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,6 +88,7 @@ public class UserServiceImpl implements UserService {
             userVOList.add(returnUserVO);
         }
         PageInfo<UserVO> pageInfo = new PageInfo<UserVO>(userVOList);
+        //pageInfo.setTotal();
         return pageInfo;
 
     }
@@ -106,9 +107,9 @@ public class UserServiceImpl implements UserService {
         userEntity.setSex(userVO.getSex());
         userEntity.setEntryDate(userVO.getEntryDate());
         userEntity.setPhone(userVO.getPhone());
-        if (userVO.getCompanyAdress() != null) {
-            String companyAdress = userVO.getCompanyAdress().getProvince() + "," +userVO.getCompanyAdress().getCity() + "," + userVO.getCompanyAdress().getOrigin();
-            userEntity.setCompanyAdress(companyAdress);
+        if (userVO.getCompanyAddress() != null) {
+            String companyAddress = userVO.getCompanyAddress().getProvince() + "," +userVO.getCompanyAddress().getCity() + "," + userVO.getCompanyAddress().getOrigin();
+            userEntity.setCompanyAddress(companyAddress);
         }
         if (userVO.getPersonalPlans() != null && userVO.getPersonalPlans().size() >0) {
             StringBuffer buffer = new StringBuffer();
@@ -135,14 +136,14 @@ public class UserServiceImpl implements UserService {
         userVO.setSex(userEntity.getSex());
         userVO.setEntryDate(userEntity.getEntryDate());
         userVO.setPhone(userEntity.getPhone());
-        if (!StringUtils.isEmpty(userEntity.getCompanyAdress())) {
-            List<String> companyAdresss = Arrays.asList(
-                    userEntity.getCompanyAdress().split(",")) ;
-            Adress companyAdress = new Adress();
-            companyAdress.setProvince(companyAdresss.get(0));
-            companyAdress.setCity(companyAdresss.get(1));
-            companyAdress.setOrigin(companyAdresss.get(2));
-            userVO.setCompanyAdress(companyAdress);
+        if (!StringUtils.isEmpty(userEntity.getCompanyAddress())) {
+            List<String> companyAddresss = Arrays.asList(
+                    userEntity.getCompanyAddress().split(",")) ;
+            Address companyAddress = new Address();
+            companyAddress.setProvince(companyAddresss.get(0));
+            companyAddress.setCity(companyAddresss.get(1));
+            companyAddress.setOrigin(companyAddresss.get(2));
+            userVO.setCompanyAddress(companyAddress);
         };
         if (!StringUtils.isEmpty(userEntity.getPersonalPlan())) {
             List<String> personalPlans = Arrays.asList(

@@ -1,14 +1,14 @@
 package com.wei.practicedemo.middleentity;
 
-public class Adress {
+public class Address {
     private String province;
     private String city;
     private String origin;
 
-    public Adress() {
+    public Address() {
     }
 
-    public Adress(String province, String city, String origin) {
+    public Address(String province, String city, String origin) {
         this.province = province;
         this.city = city;
         this.origin = origin;
@@ -40,7 +40,7 @@ public class Adress {
 
     @Override
     public String toString() {
-        return "Adress{" +
+        return "Address{" +
                 "province='" + province + '\'' +
                 ", city='" + city + '\'' +
                 ", origin='" + origin + '\'' +

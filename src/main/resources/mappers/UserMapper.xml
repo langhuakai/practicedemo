@@ -13,14 +13,14 @@
         <result column="phone" property="phone" jdbcType="VARCHAR" />
         <result column="personal_plan" property="personalPlan" jdbcType="VARCHAR" />
         <result column="entry_date" property="entryDate" jdbcType="VARCHAR" />
-        <result column="company_adress" property="companyAdress" jdbcType="VARCHAR" />
+        <result column="company_address" property="companyAddress" jdbcType="VARCHAR" />
 
     </resultMap>
 
 
 
     <select id="queryUsers" parameterType="com.wei.practicedemo.entity.UserEntity" resultMap="UserMap">
-        select id,user_name,sex,age,email,phone,personal_plan,entry_date,company_adress
+        select id,user_name,sex,age,email,phone,personal_plan,entry_date,company_address
         from users
         <where>
             1=1
@@ -33,15 +33,15 @@
             <if test="entryDate!=null and entryDate!='' ">
                 AND entry_date = #{entryDate}
             </if>
-            <if test="companyAdress!=null and companyAdress!='' ">
-                AND company_adress = #{companyAdress}
+            <if test="companyAddress!=null and companyAddress!='' ">
+                AND company_address = #{companyAddress}
             </if>
         </where>
     </select>
 
     <insert id="insertUser" parameterType="com.wei.practicedemo.entity.UserEntity">
-        insert into users(user_name,sex,age,email,phone,personal_plan,entry_date,company_adress)
-        values (#{userName},#{sex},#{age},#{email},#{phone},#{personalPlan},#{entryDate},#{companyAdress})
+        insert into users(user_name,sex,age,email,phone,personal_plan,entry_date,company_address)
+        values (#{userName},#{sex},#{age},#{email},#{phone},#{personalPlan},#{entryDate},#{companyAddress})
     </insert>
 
     <update id="updateUser" parameterType="com.wei.practicedemo.entity.UserEntity">
@@ -54,7 +54,7 @@
             <if test="phone != null">phone=#{phone},</if>
             <if test="personalPlan != null">personal_plan=#{personalPlan},</if>
             <if test="entryDate != null">entry_date=#{entryDate},</if>
-            <if test="companyAdress != null">company_adress=#{companyAdress}</if>
+            <if test="companyAddress != null">company_address=#{companyAddress}</if>
         </set>
         where id=#{id}
     </update>

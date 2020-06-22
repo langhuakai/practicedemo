@@ -1,6 +1,6 @@
 package com.wei.practicedemo.vo;
 
-import com.wei.practicedemo.middleentity.Adress;
+import com.wei.practicedemo.middleentity.Address;
 
 import java.util.List;
 
@@ -14,12 +14,12 @@ public class UserVO {
     private String phone;
     private String entryDate;
     private List<String> personalPlans;
-    private Adress companyAdress;
+    private Address companyAddress;
 
     public UserVO() {
     }
 
-    public UserVO(int id, String userName, String sex, int age, String email, String phone, List<String> personalPlans, String entryDate, Adress companyAdress) {
+    public UserVO(int id, String userName, String sex, int age, String email, String phone, List<String> personalPlans, String entryDate, Address companyAddress) {
         this.id = id;
         this.userName = userName;
         this.sex = sex;
@@ -28,7 +28,7 @@ public class UserVO {
         this.phone = phone;
         this.personalPlans = personalPlans;
         this.entryDate = entryDate;
-        this.companyAdress = companyAdress;
+        this.companyAddress = companyAddress;
     }
 
     public int getId() {
@@ -59,12 +59,12 @@ public class UserVO {
         this.entryDate = entryDate;
     }
 
-    public Adress getCompanyAdress() {
-        return companyAdress;
+    public Address getCompanyAddress() {
+        return companyAddress;
     }
 
-    public void setCompanyAdress(Adress companyAdress) {
-        this.companyAdress = companyAdress;
+    public void setCompanyAddress(Address companyAddress) {
+        this.companyAddress = companyAddress;
     }
 
     public void setUserName(String userName) {
