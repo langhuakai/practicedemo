@@ -119,8 +119,12 @@ public class UserServiceImpl implements UserService {
         }
         if (userVO.getPersonalPlans() != null && userVO.getPersonalPlans().length >0) {
             StringBuffer buffer = new StringBuffer();
-            for (String plan : userVO.getPersonalPlans()) {
-                buffer.append(plan + ",");
+            String [] plans = userVO.getPersonalPlans();
+            for (int i =0; i < userVO.getPersonalPlans().length; i++) {
+                buffer.append(plans[i]);
+                if(i < plans.length-1) {
+                    buffer.append(",");
+                }
             }
             userEntity.setPersonalPlan(buffer.toString());
         }
