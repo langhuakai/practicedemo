@@ -13,13 +13,13 @@ public class UserVO {
     private String email;
     private String phone;
     private String entryDate;
-    private List<String> personalPlans;
+    private String[] personalPlans;
     private Address companyAddress;
 
     public UserVO() {
     }
 
-    public UserVO(int id, String userName, String sex, int age, String email, String phone, List<String> personalPlans, String entryDate, Address companyAddress) {
+    public UserVO(int id, String userName, String sex, int age, String email, String phone, String[] personalPlans, String entryDate, Address companyAddress) {
         this.id = id;
         this.userName = userName;
         this.sex = sex;
@@ -95,11 +95,11 @@ public class UserVO {
         this.phone = phone;
     }
 
-    public List<String> getPersonalPlans() {
+    public String[] getPersonalPlans() {
         return personalPlans;
     }
 
-    public void setPersonalPlans(List<String> personalPlans) {
+    public void setPersonalPlans(String personalPlans[]) {
         this.personalPlans = personalPlans;
     }
 }

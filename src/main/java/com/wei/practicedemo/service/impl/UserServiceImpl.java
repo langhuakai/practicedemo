@@ -6,11 +6,13 @@ import com.github.pagehelper.PageInfo;
 import com.wei.practicedemo.dao.UserMapper;
 import com.wei.practicedemo.entity.UserEntity;
 import com.wei.practicedemo.middleentity.Address;
+import com.wei.practicedemo.middleentity.QueryEntity;
 import com.wei.practicedemo.service.UserService;
 import com.wei.practicedemo.vo.UserVO;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,12 +26,12 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 根据userVO查询用户
-     * @param userVO
+     * @param queryEntity
      * @return
      */
     @Override
-    public List<UserVO> queryUsers(UserVO userVO) {
-        List<UserEntity> userEntities = userMapper.queryUsers(translateVO2Entity(userVO));
+    public List<UserVO> queryUsers(QueryEntity queryEntity) {
+        List<UserEntity> userEntities = userMapper.queryUsers(translateQuery2UserEntity(queryEntity));
         List<UserVO> userVOList = new ArrayList<>();
         for (UserEntity userEntity : userEntities) {
             UserVO returnUserVO = translateEntity2VO(userEntity);
@@ -100,6 +102,9 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     public UserEntity translateVO2Entity(UserVO userVO) {
+        if (null == userVO) {
+            return null;
+        }
         UserEntity userEntity = new UserEntity();
         userEntity.setId(userVO.getId());
         userEntity.setUserName(userVO.getUserName());
@@ -112,7 +117,7 @@ public class UserServiceImpl implements UserService {
             String companyAddress = userVO.getCompanyAddress().getProvince() + "," +userVO.getCompanyAddress().getCity() + "," + userVO.getCompanyAddress().getOrigin();
             userEntity.setCompanyAddress(companyAddress);
         }
-        if (userVO.getPersonalPlans() != null && userVO.getPersonalPlans().size() >0) {
+        if (userVO.getPersonalPlans() != null && userVO.getPersonalPlans().length >0) {
             StringBuffer buffer = new StringBuffer();
             for (String plan : userVO.getPersonalPlans()) {
                 buffer.append(plan + ",");
@@ -129,6 +134,9 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     public UserVO translateEntity2VO(UserEntity userEntity) {
+        if (null == userEntity) {
+            return null;
+        }
         UserVO userVO = new UserVO();
         userVO.setId(userEntity.getId());
         userVO.setUserName(userEntity.getUserName());
@@ -137,7 +145,7 @@ public class UserServiceImpl implements UserService {
         userVO.setSex(userEntity.getSex());
         userVO.setEntryDate(userEntity.getEntryDate());
         userVO.setPhone(userEntity.getPhone());
-        if (!StringUtils.isEmpty(userEntity.getCompanyAddress())) {
+        if (StringUtils.isNotEmpty(userEntity.getCompanyAddress())) {
             List<String> companyAddresss = Arrays.asList(
                     userEntity.getCompanyAddress().split(",")) ;
             Address companyAddress = new Address();
@@ -147,10 +155,31 @@ public class UserServiceImpl implements UserService {
             userVO.setCompanyAddress(companyAddress);
         };
         if (!StringUtils.isEmpty(userEntity.getPersonalPlan())) {
-            List<String> personalPlans = Arrays.asList(
-                    userEntity.getPersonalPlan().split(",")) ;
+            String[] personalPlans = userEntity.getPersonalPlan().split(",") ;
             userVO.setPersonalPlans(personalPlans);
         }
         return userVO;
+    }
+
+    /**
+     * 将QueryEntity转化为UserEntity
+     * @param queryEntity
+     * @return
+     */
+    public UserEntity translateQuery2UserEntity(QueryEntity queryEntity) {
+        if (null == queryEntity) {
+            return null;
+        }
+        UserEntity userEntity = new UserEntity();
+        userEntity.setUserName(queryEntity.getUserName());
+        userEntity.setEntryDate(queryEntity.getEntryDate());
+        userEntity.setPersonalPlan(queryEntity.getPersonalPlans());
+        if (StringUtils.isNotEmpty(queryEntity.getProvince())
+                && StringUtils.isNotEmpty(queryEntity.getCity())
+                && StringUtils.isNotEmpty(queryEntity.getOrigin())) {
+            String str = queryEntity.getProvince() + queryEntity.getCity() + queryEntity.getOrigin();
+            userEntity.setCompanyAddress(str);
+        }
+        return userEntity;
     }
 }
