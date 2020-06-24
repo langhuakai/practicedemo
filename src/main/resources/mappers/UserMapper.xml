@@ -50,7 +50,7 @@
             <if test="userName != null">user_name=#{userName},</if>
             <if test="sex != null">sex=#{sex},</if>
             <if test="age != null">age=#{age},</if>
-            <if test="email != null">email=#{email}</if>
+            <if test="email != null">email=#{email},</if>
             <if test="phone != null">phone=#{phone},</if>
             <if test="personalPlan != null">personal_plan=#{personalPlan},</if>
             <if test="entryDate != null">entry_date=#{entryDate},</if>

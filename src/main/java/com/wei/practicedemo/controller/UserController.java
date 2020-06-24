@@ -57,7 +57,7 @@ public class UserController {
     }
 
     @PostMapping("/updateUser")
-    public void updateUser(@ModelAttribute("userVO")UserVO userVO) {
+    public void updateUser(@RequestBody UserVO userVO) {
         userService.updateUser(userVO);
 
     }
