@@ -2,6 +2,8 @@ package com.wei.practicedemo.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.wei.practicedemo.entity.UserEntity;
+import com.wei.practicedemo.exception.GlobalException;
+import com.wei.practicedemo.handler.Result;
 import com.wei.practicedemo.middleentity.QueryEntity;
 import com.wei.practicedemo.service.UserService;
 import com.wei.practicedemo.vo.UserVO;
@@ -19,69 +21,44 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/queryUsers")
-    public List<UserVO> queryUsers(QueryEntity queryEntity) {
+    public Result queryUsers(QueryEntity queryEntity) {
 
-        return userService.queryUsers(queryEntity);
-    }
-
-    // 数组
-  /*  @GetMapping("/queryUsers2")
-    public List<UserVO> queryUsers(String[] personalPlans) {
-
-        UserVO userVO = new UserVO();
-        userVO.setPersonalPlans(personalPlans);
-        return userService.queryUsers(userVO);
-    }
-*/
-    // 字符串
-    @GetMapping("/queryUsers3")
-    public List<UserVO> queryUsers(@RequestParam String personalPlans) {
-        // return queryService.queryUsers();
-
-       /* List<UserVO> users = new ArrayList<>();
-        UserVO userVO = new UserVO(2,"wei","男",22,"aaa@qq.com","13322222222","技术型","2020-02-22","广东省，深圳市，南山区");
-        users.add(userVO);
-        return users2;*/
-
-        QueryEntity queryEntity = new QueryEntity();
-        return userService.queryUsers(queryEntity);
-    }
-
-    // List
-    @GetMapping("/queryUsers4")
-    public List<UserVO> queryUsers(@RequestBody List<String> personalPlans) {
-
-        QueryEntity queryEntity = new QueryEntity();
-        //userVO.setPersonalPlans(personalPlans);
-        return userService.queryUsers(queryEntity);
+        List<UserVO> userVOList =  userService.queryUsers(queryEntity);
+        if (userVOList == null || userVOList.size() == 0) {
+            throw new GlobalException("未查询到结果，请确认输入是否正确");
+        }
+        return Result.ok().data("users", userVOList).message("查询成功");
     }
 
     @PostMapping("/updateUser")
-    public void updateUser(@RequestBody UserVO userVO) {
+    public Result updateUser(@RequestBody UserVO userVO) {
         userService.updateUser(userVO);
+        return Result.ok().message("更新用户成功");
 
     }
 
     @PutMapping("/insertUser")
-    public void insertUser(@RequestBody UserVO userVO, HttpServletRequest request) {
+    public Result insertUser(@RequestBody UserVO userVO, HttpServletRequest request) {
         userService.insertUser(userVO);
+        return Result.ok().message("插入用户成功");
     }
 
     @DeleteMapping("/deleteUser")
-    public void deleteUser(@RequestParam int id) {
+    public Result deleteUser(@RequestParam int id) {
         userService.delete(id);
+        return Result.ok().message("删除用户成功");
     }
 
     @GetMapping("/testPageHelper1")
-    public PageInfo<UserVO> testPageHelper1(int pageNum, int pageSize, @ModelAttribute("userVO")UserVO userVO){
+    public Result testPageHelper1(int pageNum, int pageSize, @ModelAttribute("userVO")UserVO userVO){
         PageInfo<UserVO> queryResult = userService.findAllUserByPageS(pageNum, pageSize, userVO);
-        return queryResult;
+        return Result.ok().data("pageInfo", queryResult);
     }
 
     @GetMapping("/testPageHelper2")
-    public PageInfo<UserVO> testPageHelper2(int pageNum, int pageSize, @ModelAttribute("userVO")UserVO userVO){
+    public Result testPageHelper2(int pageNum, int pageSize, @ModelAttribute("userVO")UserVO userVO){
         PageInfo<UserVO> queryResult = userService.findAllUserByPageF(pageNum, pageSize, userVO);
-        return queryResult;
+        return Result.ok().data("pageInfo", queryResult);
     }
 
 
