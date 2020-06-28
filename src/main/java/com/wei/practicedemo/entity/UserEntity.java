@@ -11,13 +11,14 @@ public class UserEntity {
     private String email;
     private String phone;
     private String personalPlan;
+    private String personalDesign;
     private String entryDate;
     private String companyAddress;
 
     public UserEntity() {
     }
 
-    public UserEntity(int id, String userName, String sex, int age, String email, String phone, String personalPlan, String entryDate, String companyAddress) {
+    public UserEntity(int id, String userName, String sex, int age, String email, String phone, String personalPlan, String personalDesign, String entryDate, String companyAddress) {
         this.userName = userName;
         this.sex = sex;
         this.age = age;
@@ -26,6 +27,7 @@ public class UserEntity {
         this.personalPlan = personalPlan;
         this.entryDate = entryDate;
         this.companyAddress = companyAddress;
+        this.personalDesign = personalDesign;
     }
 
     public int getId() {
@@ -98,5 +100,13 @@ public class UserEntity {
 
     public void setPersonalPlan(String personalPlan) {
         this.personalPlan = personalPlan;
+    }
+
+    public String getPersonalDesign() {
+        return personalDesign;
+    }
+
+    public void setPersonalDesign(String personalDesign) {
+        this.personalDesign = personalDesign;
     }
 }

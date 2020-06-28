@@ -27,7 +27,7 @@ public class UserController {
         if (userVOList == null || userVOList.size() == 0) {
             throw new GlobalException("未查询到结果，请确认输入是否正确");
         }
-        return Result.ok().data("users", userVOList).message("查询成功");
+        return Result.ok().data("users", userVOList).message("查询用户成功");
     }
 
     @PostMapping("/updateUser")
@@ -50,15 +50,15 @@ public class UserController {
     }
 
     @GetMapping("/testPageHelper1")
-    public Result testPageHelper1(int pageNum, int pageSize, @ModelAttribute("userVO")UserVO userVO){
-        PageInfo<UserVO> queryResult = userService.findAllUserByPageS(pageNum, pageSize, userVO);
+    public Result testPageHelper1(int pageNum, int pageSize, @ModelAttribute("queryEntity")QueryEntity queryEntity){
+        PageInfo<UserVO> queryResult = userService.findAllUserByPageS(pageNum, pageSize, queryEntity);
         return Result.ok().data("pageInfo", queryResult);
     }
 
     @GetMapping("/testPageHelper2")
-    public Result testPageHelper2(int pageNum, int pageSize, @ModelAttribute("userVO")UserVO userVO){
-        PageInfo<UserVO> queryResult = userService.findAllUserByPageF(pageNum, pageSize, userVO);
-        return Result.ok().data("pageInfo", queryResult);
+    public Result testPageHelper2(int pageNum, int pageSize, @ModelAttribute("queryEntity")QueryEntity queryEntity){
+        PageInfo<UserVO> queryResult = userService.findAllUserByPageF(pageNum, pageSize, queryEntity);
+        return Result.ok().data("pageInfo", queryResult).message("查询用户成功");
     }
 
 

@@ -14,12 +14,13 @@ public class UserVO {
     private String phone;
     private String entryDate;
     private String[] personalPlans;
+    private String personalDesign;
     private Address companyAddress;
 
     public UserVO() {
     }
 
-    public UserVO(int id, String userName, String sex, int age, String email, String phone, String[] personalPlans, String entryDate, Address companyAddress) {
+    public UserVO(int id, String userName, String sex, int age, String email, String phone, String[] personalPlans, String personalDesign, String entryDate, Address companyAddress) {
         this.id = id;
         this.userName = userName;
         this.sex = sex;
@@ -27,6 +28,7 @@ public class UserVO {
         this.email = email;
         this.phone = phone;
         this.personalPlans = personalPlans;
+        this.personalDesign = personalDesign;
         this.entryDate = entryDate;
         this.companyAddress = companyAddress;
     }
@@ -101,5 +103,13 @@ public class UserVO {
 
     public void setPersonalPlans(String personalPlans[]) {
         this.personalPlans = personalPlans;
+    }
+
+    public String getPersonalDesign() {
+        return personalDesign;
+    }
+
+    public void setPersonalDesign(String personalDesign) {
+        this.personalDesign = personalDesign;
     }
 }

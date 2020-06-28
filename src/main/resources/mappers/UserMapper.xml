@@ -12,6 +12,7 @@
         <result column="email" property="email" jdbcType="VARCHAR" />
         <result column="phone" property="phone" jdbcType="VARCHAR" />
         <result column="personal_plan" property="personalPlan" jdbcType="VARCHAR" />
+        <result column="personal_design" property="personalDesign" jdbcType="VARCHAR" />
         <result column="entry_date" property="entryDate" jdbcType="VARCHAR" />
         <result column="company_address" property="companyAddress" jdbcType="VARCHAR" />
 
@@ -20,7 +21,7 @@
 
 
     <select id="queryUsers" parameterType="com.wei.practicedemo.entity.UserEntity" resultMap="UserMap">
-        select id,user_name,sex,age,email,phone,personal_plan,entry_date,company_address
+        select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address
         from users
         <where>
             1=1
@@ -40,8 +41,8 @@
     </select>
 
     <insert id="insertUser" parameterType="com.wei.practicedemo.entity.UserEntity">
-        insert into users(user_name,sex,age,email,phone,personal_plan,entry_date,company_address)
-        values (#{userName},#{sex},#{age},#{email},#{phone},#{personalPlan},#{entryDate},#{companyAddress})
+        insert into users(user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address)
+        values (#{userName},#{sex},#{age},#{email},#{phone},#{personalPlan},#{personalDesign},#{entryDate},#{companyAddress})
     </insert>
 
     <update id="updateUser" parameterType="com.wei.practicedemo.entity.UserEntity">
@@ -53,6 +54,7 @@
             <if test="email != null">email=#{email},</if>
             <if test="phone != null">phone=#{phone},</if>
             <if test="personalPlan != null">personal_plan=#{personalPlan},</if>
+            <if test="personalDesign != null">personal_design=#{personalDesign},</if>
             <if test="entryDate != null">entry_date=#{entryDate},</if>
             <if test="companyAddress != null">company_address=#{companyAddress}</if>
         </set>

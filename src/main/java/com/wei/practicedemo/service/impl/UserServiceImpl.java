@@ -68,10 +68,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public PageInfo<UserVO> findAllUserByPageF(int pageNum, int pageSize, UserVO userVO) {
+    public PageInfo<UserVO> findAllUserByPageF(int pageNum, int pageSize, QueryEntity queryEntity) {
         // TODO Auto-generated method stub
         Page page = PageHelper.startPage(pageNum, pageSize);
-        List<UserEntity> lists = userMapper.queryUsers(translateVO2Entity(userVO));
+        List<UserEntity> lists = userMapper.queryUsers(translateQuery2UserEntity(queryEntity));
         List<UserVO> userVOList = new ArrayList<>();
         for (UserEntity userEntity : lists) {
             UserVO returnUserVO = translateEntity2VO(userEntity);
@@ -83,9 +83,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public PageInfo<UserVO> findAllUserByPageS(int pageNum, int pageSize, UserVO userVO) {
+    public PageInfo<UserVO> findAllUserByPageS(int pageNum, int pageSize, QueryEntity queryEntity) {
         // TODO Auto-generated method stub
-        List<UserEntity> lists = userMapper.queryUsers(translateVO2Entity(userVO));
+        List<UserEntity> lists = userMapper.queryUsers(translateQuery2UserEntity(queryEntity));
         List<UserVO> userVOList = new ArrayList<>();
         for (UserEntity userEntity : lists) {
             UserVO returnUserVO = translateEntity2VO(userEntity);
@@ -113,6 +113,7 @@ public class UserServiceImpl implements UserService {
         userEntity.setSex(userVO.getSex());
         userEntity.setEntryDate(userVO.getEntryDate());
         userEntity.setPhone(userVO.getPhone());
+        userEntity.setPersonalDesign(userVO.getPersonalDesign());
         if (userVO.getCompanyAddress() != null) {
             String companyAddress = userVO.getCompanyAddress().getProvince() + "," +userVO.getCompanyAddress().getCity() + "," + userVO.getCompanyAddress().getOrigin();
             userEntity.setCompanyAddress(companyAddress);
@@ -149,6 +150,7 @@ public class UserServiceImpl implements UserService {
         userVO.setSex(userEntity.getSex());
         userVO.setEntryDate(userEntity.getEntryDate());
         userVO.setPhone(userEntity.getPhone());
+        userVO.setPersonalDesign(userEntity.getPersonalDesign());
         if (StringUtils.isNotEmpty(userEntity.getCompanyAddress())) {
             List<String> companyAddresss = Arrays.asList(
                     userEntity.getCompanyAddress().split(",")) ;
@@ -181,7 +183,7 @@ public class UserServiceImpl implements UserService {
         if (StringUtils.isNotEmpty(queryEntity.getProvince())
                 && StringUtils.isNotEmpty(queryEntity.getCity())
                 && StringUtils.isNotEmpty(queryEntity.getOrigin())) {
-            String str = queryEntity.getProvince() + queryEntity.getCity() + queryEntity.getOrigin();
+            String str = queryEntity.getProvince() + "," + queryEntity.getCity() + "," + queryEntity.getOrigin();
             userEntity.setCompanyAddress(str);
         }
         return userEntity;

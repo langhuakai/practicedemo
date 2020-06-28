@@ -1,6 +1,7 @@
 package com.wei.practicedemo.service;
 
 import com.github.pagehelper.PageInfo;
+import com.wei.practicedemo.entity.UserEntity;
 import com.wei.practicedemo.middleentity.QueryEntity;
 import com.wei.practicedemo.vo.UserVO;
 
@@ -13,7 +14,7 @@ public interface UserService {
     void updateUser(UserVO userVO);
     void delete(int id);
 
-    PageInfo<UserVO> findAllUserByPageF(int pageNum,int pageSize, UserVO userVO);
+    PageInfo<UserVO> findAllUserByPageF(int pageNum,int pageSize, QueryEntity queryEntity);
 
-    PageInfo<UserVO> findAllUserByPageS(int pageNum, int pageSize, UserVO userVO);
+    PageInfo<UserVO> findAllUserByPageS(int pageNum, int pageSize, QueryEntity queryEntity);
 }
