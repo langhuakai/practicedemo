@@ -1,6 +1,7 @@
 package com.wei.practicedemo.handler;
 
 import com.wei.practicedemo.exception.GlobalException;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -11,9 +12,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * 使用 slf4j 保存日志信息。
  * 此处使用了 统一结果处理 类 Result 用于包装异常信息。
  */
+@Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    private Logger logger = LoggerFactory.getLogger(getClass());
+   // private Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * 处理 Exception 异常
@@ -22,7 +24,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(Exception.class)
     public Result handlerException(Exception e) {
-        logger.error(e.getMessage(), e);
+       // logger.error(e.getMessage(), e);
+        log.error(e.getMessage(), e);
         return Result.error().message("系统异常");
     }
 
@@ -33,7 +36,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(NullPointerException.class)
     public Result handlerNullPointerException(NullPointerException e) {
-        logger.error(e.getMessage(), e);
+       // logger.error(e.getMessage(), e);
+        log.error(e.getMessage(), e);
         return Result.error().message("空指针异常");
     }
 
@@ -44,7 +48,8 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(GlobalException.class)
     public Result handlerGlobalException(GlobalException e) {
-        logger.error(e.getMessage(), e);
+       // logger.error(e.getMessage(), e);
+        log.error(e.getMessage(), e);
         return Result.error().message(e.getMessage()).code(e.getCode());
     }
 }

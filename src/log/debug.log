@@ -1,0 +1,821 @@
+2020-06-29 10:19:40.838 [main] DEBUG com.wei.practicedemo.PracticedemoApplication - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-06-29 14:51:09.062 [main] DEBUG com.wei.practicedemo.PracticedemoApplication - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-06-29 14:58:25.247 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 14:58:25.275 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 14:58:25.305 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 14:58:25.308 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 14:58:25.309 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 14:58:25.321 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 14:58:51.209 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 14:58:51.210 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String)
+2020-06-29 14:58:51.214 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 14:58:51.217 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ? 
+2020-06-29 14:58:51.217 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 10(Integer)
+2020-06-29 14:58:51.224 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 14:59:05.642 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') AND company_address = ? 
+2020-06-29 14:59:05.643 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String), 230000,230100,230102(String)
+2020-06-29 14:59:05.644 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 14:59:05.645 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') AND company_address = ? LIMIT ? 
+2020-06-29 14:59:05.645 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 230000,230100,230102(String), 10(Integer)
+2020-06-29 14:59:05.646 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 1
+2020-06-29 14:59:16.909 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') AND personal_plan = ? AND company_address = ? 
+2020-06-29 14:59:16.910 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String), 技术型(String), 230000,230100,230102(String)
+2020-06-29 14:59:16.911 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 14:59:26.029 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND entry_date = ? 
+2020-06-29 14:59:26.030 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 2020-06-08(String)
+2020-06-29 14:59:26.032 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 14:59:26.033 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 AND entry_date = ? LIMIT ? 
+2020-06-29 14:59:26.034 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 2020-06-08(String), 10(Integer)
+2020-06-29 14:59:26.038 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 15:04:42.528 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND entry_date = ? 
+2020-06-29 15:04:42.529 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 2020-06-08(String)
+2020-06-29 15:04:42.530 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 15:04:42.531 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 AND entry_date = ? LIMIT ? 
+2020-06-29 15:04:42.532 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 2020-06-08(String), 10(Integer)
+2020-06-29 15:04:42.536 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 15:04:55.401 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND entry_date = ? 
+2020-06-29 15:04:55.402 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 2020-06-09(String)
+2020-06-29 15:04:55.403 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 15:04:55.404 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 AND entry_date = ? LIMIT ? 
+2020-06-29 15:04:55.405 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 2020-06-09(String), 10(Integer)
+2020-06-29 15:04:55.407 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 3
+2020-06-29 15:05:13.134 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 15:05:13.135 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String)
+2020-06-29 15:05:13.137 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 15:05:13.138 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ? 
+2020-06-29 15:05:13.139 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 10(Integer)
+2020-06-29 15:05:13.142 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 15:19:48.950 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 15:19:48.951 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 15:19:48.953 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 15:19:48.955 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 15:19:48.955 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 15:19:48.959 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 15:21:42.756 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 15:21:42.756 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 15:21:42.758 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 15:21:42.759 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 15:21:42.760 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 15:21:42.764 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:16:04.463 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:16:04.464 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:16:04.466 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:16:04.467 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:16:04.468 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:16:04.470 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:32:10.222 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:32:10.223 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:32:10.224 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:32:10.225 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:32:10.225 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:32:10.227 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:32:21.370 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:32:21.370 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:32:21.372 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:32:21.373 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:32:21.374 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:32:21.377 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:43:15.443 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:43:15.444 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:43:15.446 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:43:15.447 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:43:15.448 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:43:15.450 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:44:52.768 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:44:52.768 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:44:52.770 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:44:52.771 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:44:52.771 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:44:52.773 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:47:14.857 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:47:14.858 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:47:14.859 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:47:14.860 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:47:14.860 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:47:14.862 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:52:09.081 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:52:09.082 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:52:09.085 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:52:09.088 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:52:09.089 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:52:09.091 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:53:38.444 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:53:38.445 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:53:38.446 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:53:38.447 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:53:38.448 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:53:38.450 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:54:53.851 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:54:53.851 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:54:53.852 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:54:53.853 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:54:53.854 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:54:53.856 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:57:42.215 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:57:42.216 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:57:42.217 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:57:42.219 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:57:42.220 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:57:42.226 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 16:58:28.734 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 16:58:28.735 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 16:58:28.736 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 16:58:28.739 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 16:58:28.740 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 16:58:28.743 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:00:55.951 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:00:55.951 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:00:55.952 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:00:55.953 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:00:55.954 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:00:55.957 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:03:16.012 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:03:16.012 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:03:16.013 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:03:16.014 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:03:16.015 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:03:16.017 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:04:18.745 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:04:18.745 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:04:18.747 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:04:18.748 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:04:18.748 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:04:18.751 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:06:15.825 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:06:15.826 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:06:15.827 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:06:15.828 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:06:15.829 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:06:15.832 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:06:52.497 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:06:52.498 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:06:52.499 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:06:52.499 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:06:52.500 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:06:52.502 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:16:08.862 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:16:08.862 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:16:08.864 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:16:08.865 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:16:08.865 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:16:08.867 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:16:25.212 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:16:25.213 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:16:25.214 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:16:25.215 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:16:25.215 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:16:25.217 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:17:01.707 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 17:17:01.708 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String)
+2020-06-29 17:17:01.710 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:17:01.711 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ? 
+2020-06-29 17:17:01.712 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 10(Integer)
+2020-06-29 17:17:01.714 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:17:15.811 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:17:15.811 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:17:15.814 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:17:15.815 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:17:15.815 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:17:15.817 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:17:21.598 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:17:21.599 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:17:21.600 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:17:21.600 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:17:21.601 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:17:21.602 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:17:29.060 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 17:17:29.061 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String)
+2020-06-29 17:17:29.062 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:17:29.063 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ? 
+2020-06-29 17:17:29.063 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 10(Integer)
+2020-06-29 17:17:29.064 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:20:00.770 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') AND personal_plan = ? 
+2020-06-29 17:20:00.771 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String), 技术型,营销型(String)
+2020-06-29 17:20:00.773 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:20:00.775 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') and personal_plan = ? LIMIT ? 
+2020-06-29 17:20:00.775 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 技术型,营销型(String), 10(Integer)
+2020-06-29 17:20:00.777 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 7
+2020-06-29 17:20:09.627 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') AND personal_plan = ? 
+2020-06-29 17:20:09.627 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String), 技术型(String)
+2020-06-29 17:20:09.628 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:20:09.630 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') and personal_plan = ? LIMIT ? 
+2020-06-29 17:20:09.632 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 技术型(String), 10(Integer)
+2020-06-29 17:20:09.634 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 5
+2020-06-29 17:20:47.032 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') AND entry_date = ? 
+2020-06-29 17:20:47.033 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String), 2020-06-10(String)
+2020-06-29 17:20:47.034 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:20:47.035 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') AND entry_date = ? LIMIT ? 
+2020-06-29 17:20:47.035 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 2020-06-10(String), 10(Integer)
+2020-06-29 17:20:47.037 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 1
+2020-06-29 17:20:55.974 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') AND company_address = ? 
+2020-06-29 17:20:55.974 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String), 110000,110100,110101(String)
+2020-06-29 17:20:55.976 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:21:02.514 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') AND company_address = ? 
+2020-06-29 17:21:02.516 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String), 230000,230100,230102(String)
+2020-06-29 17:21:02.519 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:21:02.520 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') AND company_address = ? LIMIT ? 
+2020-06-29 17:21:02.521 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 230000,230100,230102(String), 10(Integer)
+2020-06-29 17:21:02.522 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 1
+2020-06-29 17:21:08.860 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') AND company_address = ? 
+2020-06-29 17:21:08.860 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String), 140000,140100,140105(String)
+2020-06-29 17:21:08.861 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:21:08.862 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') AND company_address = ? LIMIT ? 
+2020-06-29 17:21:08.862 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 140000,140100,140105(String), 10(Integer)
+2020-06-29 17:21:08.864 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 1
+2020-06-29 17:21:21.799 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:21:21.799 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:21:21.800 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:21:21.801 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:21:21.801 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:21:21.802 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:21:27.146 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND company_address = ? 
+2020-06-29 17:21:27.146 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 140000,140100,140105(String)
+2020-06-29 17:21:27.147 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:21:27.149 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 AND company_address = ? LIMIT ? 
+2020-06-29 17:21:27.149 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 140000,140100,140105(String), 10(Integer)
+2020-06-29 17:21:27.151 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 2
+2020-06-29 17:21:43.987 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:21:43.988 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:21:43.988 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:21:43.989 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:21:43.990 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:21:43.994 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:21:55.282 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND company_address = ? 
+2020-06-29 17:21:55.283 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 140000,140100,140105(String)
+2020-06-29 17:21:55.284 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:21:55.284 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 AND company_address = ? LIMIT ? 
+2020-06-29 17:21:55.285 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 140000,140100,140105(String), 10(Integer)
+2020-06-29 17:21:55.286 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 2
+2020-06-29 17:22:06.704 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND entry_date = ? AND company_address = ? 
+2020-06-29 17:22:06.704 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 2020-06-08(String), 140000,140100,140105(String)
+2020-06-29 17:22:06.705 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:22:06.707 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 AND entry_date = ? AND company_address = ? LIMIT ? 
+2020-06-29 17:22:06.707 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 2020-06-08(String), 140000,140100,140105(String), 10(Integer)
+2020-06-29 17:22:06.709 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 1
+2020-06-29 17:22:20.712 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.deleteUser - ==>  Preparing: delete from users where id = ? 
+2020-06-29 17:22:20.713 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.deleteUser - ==> Parameters: 30(Integer)
+2020-06-29 17:22:20.800 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.deleteUser - <==    Updates: 1
+2020-06-29 17:22:26.708 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:22:26.709 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:22:26.710 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:22:26.712 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:22:26.712 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:22:26.715 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:39:27.353 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:39:27.353 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:39:27.354 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:39:27.355 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:39:27.355 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:39:27.356 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:40:18.676 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:40:18.676 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:40:18.677 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:40:18.677 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:40:18.678 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:40:18.679 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:41:06.834 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:41:06.835 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:41:06.835 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:41:06.836 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:41:06.844 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:41:06.849 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:41:52.191 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:41:52.192 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:41:52.192 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:41:52.193 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:41:52.194 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:41:52.195 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:42:03.214 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:42:03.214 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:42:03.215 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:42:03.216 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:42:03.217 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:42:03.219 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:42:09.353 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.deleteUser - ==>  Preparing: delete from users where id = ? 
+2020-06-29 17:42:09.354 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.deleteUser - ==> Parameters: 13(Integer)
+2020-06-29 17:42:09.437 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.deleteUser - <==    Updates: 1
+2020-06-29 17:42:26.813 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:42:26.813 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:42:26.814 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:42:26.815 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:42:26.815 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:42:26.817 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:42:51.820 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 17:42:51.821 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String)
+2020-06-29 17:42:51.821 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:42:51.822 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ? 
+2020-06-29 17:42:51.823 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 10(Integer)
+2020-06-29 17:42:51.824 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:43:09.477 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:43:09.478 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:43:09.479 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:43:09.480 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:43:09.480 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:43:09.482 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:45:10.218 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:45:10.219 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:45:10.220 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:45:10.221 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:45:10.221 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:45:10.223 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:47:15.151 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:47:15.151 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:47:15.152 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:47:15.152 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:47:15.153 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:47:15.154 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:49:10.317 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:49:10.318 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:49:10.319 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:49:10.320 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:49:10.321 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:49:10.322 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:51:06.797 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:51:06.798 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:51:06.799 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:51:06.801 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:51:06.801 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:51:06.803 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:52:20.751 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:52:20.751 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:52:20.752 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:52:20.753 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:52:20.754 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:52:20.755 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:52:37.530 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:52:37.530 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:52:37.532 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:52:37.532 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:52:37.533 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:52:37.538 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:54:23.040 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:54:23.040 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:54:23.041 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:54:23.042 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:54:23.043 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:54:23.044 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:54:43.385 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:54:43.385 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:54:43.386 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:54:43.387 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:54:43.387 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:54:43.389 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 17:54:51.965 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 17:54:51.965 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 17:54:51.967 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 17:54:51.968 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 17:54:51.968 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 17:54:51.970 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:04:32.523 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:04:32.524 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:04:32.524 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:04:32.525 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:04:32.526 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:04:32.527 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:15:25.928 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:15:25.928 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:15:25.929 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:15:25.934 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:15:25.934 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:15:25.936 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:15:47.152 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:15:47.152 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:15:47.154 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:15:47.155 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:15:47.156 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:15:47.157 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:15:50.822 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:15:50.823 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:15:50.823 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:15:50.824 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:15:50.825 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:15:50.826 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:15:51.863 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:15:51.863 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:15:51.864 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:15:51.865 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:15:51.866 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:15:51.867 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:16:01.978 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:16:01.978 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:16:01.979 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:16:01.979 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:16:01.980 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:16:01.981 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:16:39.224 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:16:39.224 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:16:39.225 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:16:39.225 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:16:39.226 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:16:39.227 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:16:49.161 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:16:49.162 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:16:49.162 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:16:49.163 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:16:49.164 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:16:49.165 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:17:31.507 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:17:31.508 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:17:31.508 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:17:31.509 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:17:31.509 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:17:31.510 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:17:35.101 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:17:35.102 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:17:35.103 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:17:35.104 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:17:35.104 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:17:35.106 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:17:41.109 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:17:41.109 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:17:41.110 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:17:41.111 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:17:41.111 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:17:41.113 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:17:42.083 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:17:42.084 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:17:42.085 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:17:42.086 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:17:42.087 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:17:42.088 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:17:43.321 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:17:43.321 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:17:43.322 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:17:43.323 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:17:43.323 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:17:43.325 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:17:45.608 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:17:45.609 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:17:45.609 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:17:45.610 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:17:45.610 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:17:45.611 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:19:14.662 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:19:14.662 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:19:14.664 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:19:14.664 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:19:14.665 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:19:14.666 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:19:46.024 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:19:46.024 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:19:46.025 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:19:46.026 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:19:46.027 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:19:46.028 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:19:47.626 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:19:47.627 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:19:47.628 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:19:47.628 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:19:47.629 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:19:47.630 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:19:52.648 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:19:52.648 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:19:52.649 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:19:52.650 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:19:52.650 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:19:52.651 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:22:12.529 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:22:12.530 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:22:12.531 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:22:12.531 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:22:12.532 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:22:12.533 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:22:14.257 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:22:14.257 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:22:14.258 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:22:14.259 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:22:14.259 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:22:14.260 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:22:15.834 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:22:15.834 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:22:15.835 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:22:15.836 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:22:15.836 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:22:15.837 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:22:16.681 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:22:16.682 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:22:16.683 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:22:16.684 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:22:16.685 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:22:16.686 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:22:24.625 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:22:24.625 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:22:24.626 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:22:24.627 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:22:24.627 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:22:24.629 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:23:33.414 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:23:33.415 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:23:33.415 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:23:33.416 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:23:33.417 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:23:33.418 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:23:51.900 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:23:51.901 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:23:51.901 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:23:51.902 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:23:51.903 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:23:51.904 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:24:15.960 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:24:15.960 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:24:15.961 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:24:15.962 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:24:15.962 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:24:15.964 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:24:16.792 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:24:16.792 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:24:16.793 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:24:16.794 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:24:16.794 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:24:16.796 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:24:25.173 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:24:25.173 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:24:25.174 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:24:25.175 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:24:25.175 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:24:25.176 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:24:26.509 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:24:26.509 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:24:26.510 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:24:26.511 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:24:26.511 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:24:26.512 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:24:31.953 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:24:31.953 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:24:31.954 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:24:31.955 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:24:31.955 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:24:31.957 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:24:32.608 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:24:32.609 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:24:32.610 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:24:32.611 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:24:32.611 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:24:32.612 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:27:16.184 [main] DEBUG com.wei.practicedemo.PracticedemoApplication - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-06-29 18:30:24.812 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:30:24.834 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:30:24.852 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:30:24.854 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:30:24.855 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:30:24.860 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:31:27.441 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:31:27.441 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:31:27.443 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:31:27.445 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:31:27.445 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:31:27.451 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:31:30.684 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:31:30.685 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:31:30.686 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:31:30.687 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:31:30.687 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:31:30.690 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:31:47.938 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:31:47.939 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:31:47.940 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:31:47.941 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:31:47.941 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:31:47.943 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:31:48.292 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:31:48.292 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:31:48.294 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:31:48.295 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:31:48.295 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:31:48.298 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:32:09.573 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:32:09.573 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:32:09.574 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:32:09.575 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:32:09.576 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:32:09.577 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:32:25.279 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:32:25.279 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:32:25.280 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:32:25.281 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:32:25.281 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:32:25.283 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:33:28.343 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:33:28.343 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:33:28.345 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:33:28.347 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:33:28.348 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:33:28.351 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:33:32.750 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:33:32.751 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:33:32.753 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:33:32.755 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:33:32.756 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:33:32.763 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:33:42.629 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:33:42.630 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:33:42.631 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:33:42.632 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:33:42.632 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:33:42.634 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:33:54.162 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:33:54.163 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:33:54.164 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:33:54.165 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:33:54.166 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:33:54.168 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:34:57.801 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:34:57.802 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:34:57.803 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:34:57.804 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:34:57.805 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:34:57.807 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:35:43.678 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:35:43.679 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:35:43.679 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:35:43.680 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:35:43.681 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:35:43.683 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:36:14.722 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:36:14.723 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:36:14.724 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:36:14.725 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:36:14.726 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:36:14.728 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:36:25.533 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:36:25.534 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:36:25.536 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:36:25.538 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:36:25.538 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:36:25.541 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:36:57.027 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:36:57.028 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:36:57.030 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:36:57.034 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:36:57.035 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:36:57.039 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:36:57.044 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:36:57.044 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:36:57.049 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:36:57.050 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:36:57.051 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:36:57.053 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:36:57.062 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:36:57.063 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:36:57.064 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:36:57.064 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:36:57.064 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:36:57.064 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:36:57.065 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:36:57.065 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:36:57.066 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:36:57.066 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:36:57.066 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:36:57.067 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:36:57.069 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:36:57.070 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:36:57.077 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:36:57.078 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:36:57.078 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:36:57.082 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:37:05.963 [main] DEBUG com.wei.practicedemo.PracticedemoApplication - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-06-29 18:37:34.248 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:37:34.271 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:37:34.287 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:37:34.290 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:37:34.291 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:37:34.297 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:40:26.916 [main] DEBUG com.wei.practicedemo.PracticedemoApplication - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-06-29 18:40:44.042 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 18:40:44.063 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 18:40:44.081 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:40:44.084 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 18:40:44.084 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 18:40:44.089 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 18:43:47.992 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.insertUser - ==>  Preparing: insert into users(user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address) values (?,?,?,?,?,?,?,?,?) 
+2020-06-29 18:43:47.993 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.insertUser - ==> Parameters: 张亮(String), 男(String), 22(Integer), zhangliang@qq.com(String), 13623452345(String), 技术型(String), 我的架构师之路(String), 2020-06-08(String), 140000,140100,140105(String)
+2020-06-29 18:43:48.037 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.insertUser - <==    Updates: 1
+2020-06-29 18:44:12.780 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 18:44:12.780 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 张亮(String)
+2020-06-29 18:44:12.782 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 18:44:12.783 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ? 
+2020-06-29 18:44:12.783 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 张亮(String), 10(Integer)
+2020-06-29 18:44:12.785 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 1
+2020-06-29 18:46:13.888 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.insertUser - ==>  Preparing: insert into users(user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address) values (?,?,?,?,?,?,?,?,?) 
+2020-06-29 18:46:13.889 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.insertUser - ==> Parameters: 王伟(String), 男(String), 23(Integer), wangwei@qq.com(String), 13434563456(String), 业务型(String), 我的长久规划(String), 2020-06-09(String), 150000,150500,150502(String)
+2020-06-29 18:46:13.998 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.insertUser - <==    Updates: 1
+2020-06-29 19:00:32.130 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:00:32.130 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:00:32.131 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:00:32.132 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:00:32.133 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:00:32.139 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:03:17.236 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 19:03:17.237 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 家辉(String)
+2020-06-29 19:03:17.238 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:03:17.240 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ? 
+2020-06-29 19:03:17.240 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 家辉(String), 10(Integer)
+2020-06-29 19:03:17.243 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:03:48.251 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:03:48.252 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:03:48.253 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:03:48.254 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:03:48.254 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:03:48.256 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:03:54.615 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:03:54.615 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:03:54.616 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:03:54.617 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ?, ? 
+2020-06-29 19:03:54.618 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 80(Integer), 10(Integer)
+2020-06-29 19:03:54.621 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 7
+2020-06-29 19:08:06.885 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:08:06.886 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:08:06.889 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:08:06.891 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:08:06.898 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:08:06.903 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:08:35.499 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 19:08:35.499 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String)
+2020-06-29 19:08:35.503 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:08:35.505 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ? 
+2020-06-29 19:08:35.505 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 10(Integer)
+2020-06-29 19:08:35.509 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:08:55.781 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 19:08:55.782 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String)
+2020-06-29 19:08:55.783 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:08:55.784 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ?, ? 
+2020-06-29 19:08:55.785 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 20(Integer), 10(Integer)
+2020-06-29 19:08:55.786 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 5
+2020-06-29 19:10:30.543 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 19:10:30.544 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String)
+2020-06-29 19:10:30.545 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:10:30.546 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ? 
+2020-06-29 19:10:30.547 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 10(Integer)
+2020-06-29 19:10:30.549 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:20:48.583 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:20:48.584 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:20:48.585 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:20:48.586 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:20:48.586 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:20:48.587 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:21:02.047 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:21:02.047 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:21:02.048 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:21:02.050 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:21:02.050 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:21:02.052 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:28:25.256 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:28:25.256 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:28:25.257 [http-nio-8080-exec-5] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:28:25.258 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:28:25.258 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:28:25.260 [http-nio-8080-exec-5] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:29:33.225 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:29:33.226 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:29:33.227 [http-nio-8080-exec-6] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:29:33.229 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:29:33.229 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:29:33.231 [http-nio-8080-exec-6] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:29:49.015 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:29:49.016 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:29:49.016 [http-nio-8080-exec-7] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:29:49.018 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:29:49.018 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:29:49.020 [http-nio-8080-exec-7] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:29:51.725 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:29:51.726 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:29:51.727 [http-nio-8080-exec-8] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:29:51.728 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:29:51.729 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:29:51.731 [http-nio-8080-exec-8] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:30:38.439 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:30:38.439 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:30:38.441 [http-nio-8080-exec-9] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:30:38.442 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:30:38.443 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:30:38.446 [http-nio-8080-exec-9] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:30:49.157 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:30:49.159 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:30:49.160 [http-nio-8080-exec-10] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:30:49.161 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:30:49.161 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:30:49.163 [http-nio-8080-exec-10] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:35:36.462 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:35:36.462 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:35:36.463 [http-nio-8080-exec-1] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:35:36.464 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:35:36.464 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:35:36.466 [http-nio-8080-exec-1] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:43:11.775 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND user_name LIKE CONCAT(CONCAT('%', ?), '%') 
+2020-06-29 19:43:11.775 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: wei(String)
+2020-06-29 19:43:11.777 [http-nio-8080-exec-2] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:43:11.778 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and user_name LIKE CONCAT(CONCAT('%', ?),'%') LIMIT ? 
+2020-06-29 19:43:11.778 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: wei(String), 10(Integer)
+2020-06-29 19:43:11.779 [http-nio-8080-exec-2] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
+2020-06-29 19:45:34.693 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 AND personal_plan = ? 
+2020-06-29 19:45:34.693 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 技术型(String)
+2020-06-29 19:45:34.694 [http-nio-8080-exec-3] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:45:34.695 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 and personal_plan = ? LIMIT ? 
+2020-06-29 19:45:34.696 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 技术型(String), 10(Integer)
+2020-06-29 19:45:34.697 [http-nio-8080-exec-3] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 8
+2020-06-29 19:45:46.689 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==>  Preparing: SELECT count(0) FROM users WHERE 1 = 1 
+2020-06-29 19:45:46.690 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - ==> Parameters: 
+2020-06-29 19:45:46.690 [http-nio-8080-exec-4] DEBUG c.wei.practicedemo.dao.UserMapper.queryUsers_COUNT - <==      Total: 1
+2020-06-29 19:45:46.691 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==>  Preparing: select id,user_name,sex,age,email,phone,personal_plan,personal_design,entry_date,company_address from users WHERE 1=1 LIMIT ? 
+2020-06-29 19:45:46.692 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - ==> Parameters: 10(Integer)
+2020-06-29 19:45:46.694 [http-nio-8080-exec-4] DEBUG com.wei.practicedemo.dao.UserMapper.queryUsers - <==      Total: 10
